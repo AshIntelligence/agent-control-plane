@@ -1,5 +1,7 @@
 # Agent Control Plane
 
+[![System checks](https://github.com/AshIntelligence/agent-control-plane/actions/workflows/tests.yml/badge.svg)](https://github.com/AshIntelligence/agent-control-plane/actions/workflows/tests.yml)
+
 `Python · AI platform · policy controls · rollout governance`
 
 This project puts the operating controls around an agent in one inspectable place: **registry, tool permissions, approval boundaries, evaluation gates, cost budgets, incident thresholds, rollout state and audit events**.
