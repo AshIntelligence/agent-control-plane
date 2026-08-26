@@ -1,25 +1,20 @@
 # Agent Control Plane
 
-**CONTROL · Agent operating boundaries**
+**CONTROL flagship in the [Ash Intelligence Lab](https://github.com/AshIntelligence/agenticmine)**
 
-### Product question
-**When is an agent actually allowed to act?**
-
-**[▶ Try the Control Plane live](https://ash-intelligence-lab.streamlit.app/?product=agentic-product-control-plane)** · **[Explore the full systems lab](https://ash-intelligence-lab.streamlit.app/)**
+**[▶ Try the Control Plane live](https://ash-intelligence-lab.streamlit.app/?product=agentic-product-control-plane)** · **[Open the full lab](https://ash-intelligence-lab.streamlit.app/)**
 
 `Python · AI platform · policy controls · rollout governance`
 
-Agent Control Plane is the **CONTROL** flagship in Ash Intelligence. It puts the operating boundaries around an agent in one inspectable place: **registry, tool permissions, approval boundaries, evaluation gates, cost budgets, incident thresholds, rollout state and audit events**.
+This project puts the controls around an agent in one place: **registration, tool permissions, approval boundaries, eval gates, cost budgets, incident thresholds, rollout state and audit events**.
 
-The project deliberately keeps three decisions separate:
+It separates three decisions that often get blurred together:
 
 1. Is the agent registered with the right contract?
-2. Is this tool call **allowed, denied or waiting for human approval**?
-3. Do current quality, reliability and cost signals allow rollout to advance?
+2. Is this tool call allowed, denied, or waiting for human approval?
+3. Do current quality, reliability and cost signals support the next rollout stage?
 
-That separation matters because an agent can be healthy enough for canary traffic while still being unauthorized to perform a particular high-consequence action.
-
-## What the code models
+## Core objects
 
 `AgentSpec` defines registered tools, approval-required tools, rollout stage and quality/cost thresholds.
 
@@ -27,7 +22,7 @@ That separation matters because an agent can be healthy enough for canary traffi
 
 `assess_rollout(...)` evaluates quality, incident and cost gates separately from tool authorization and returns **HOLD / CANARY / PRODUCTION** with blockers and a next action.
 
-`ControlPlane` keeps an in-memory registry and audit trail so the decision can be inspected after the fact.
+`ControlPlane` keeps an in-memory registry and audit trail so the reason behind a decision is available after the fact.
 
 ## Architecture
 
@@ -50,12 +45,6 @@ flowchart LR
   G --> O
 ```
 
-## Product principle
-
-**Agency is not a blanket capability. It is a set of explicit permissions, states and operating thresholds.**
-
-The prototype makes those boundaries visible so “the model can do it” never silently becomes “the product should allow it.”
-
 ## Run
 
 ```bash
@@ -68,6 +57,4 @@ No external services or API keys are required.
 
 ## Next
 
-The next iteration is durable execution state, versioned policy, rolling per-agent budgets and an approval UI that records reviewer decisions in the audit trail.
-
-Part of **CONTROL** in the broader [Ash Intelligence Lab](https://github.com/AshIntelligence/agenticmine).
+Durable execution state, versioned policy, rolling per-agent budgets and an approval UI that records reviewer decisions in the audit trail.
