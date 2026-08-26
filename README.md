@@ -1,7 +1,5 @@
 # Agent Control Plane
 
-[![System checks](https://github.com/AshIntelligence/agent-control-plane/actions/workflows/tests.yml/badge.svg)](https://github.com/AshIntelligence/agent-control-plane/actions/workflows/tests.yml)
-
 **[▶ Try the Control Plane live](https://ash-intelligence-lab.streamlit.app/?product=agentic-product-control-plane)** · **[Explore the full systems lab](https://ash-intelligence-lab.streamlit.app/)**
 
 `Python · AI platform · policy controls · rollout governance`
